@@ -1,0 +1,177 @@
+/*---------------------------------------------*/
+/* Define Global variables and class settings  */
+/*---------------------------------------------*/
+:root {
+  /* Color Variables */
+  --color-home: rgb(43, 96, 255);
+  --color-away: rgb(255, 43, 43);
+  --color-tie: linear-gradient(90deg, rgba(43,96,255,1) 0%, rgba(255,43,43,1) 100%);
+  --color-neutral: rgb(225, 225, 225);
+  
+  --color-glass: rgba(225, 225, 225, 0.18);
+  --color-dim: rgba(160, 160, 160, 0.75);
+  --color-white: rgb(255, 255, 255);
+  --button-normal: rgba(255, 255, 255, 0.24);
+  --side-color: var(--color-neutral);
+
+  /* Shadow Variables */
+  --shadow_light: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.36);
+  --shadow_regular: 0 0.25rem 0.25rem rgba(0, 0, 0, 0.36);
+  --shadow_heavy: 0 0.5rem 0.5rem rgba(15, 20, 72, 0.36);
+
+  /* Default Font */
+  font-size: calc(15px + 0.390625vw);
+  font-family: "Inter", sans-serif;
+  color: white;
+
+  /* Size Variables */
+  --header-height: 100px;
+  --footer-height: 72px;
+}
+
+* {
+  box-sizing: border-box;
+  cursor: default;
+}
+
+/*---------------------------------------------*/
+/* Global Class Setting                        */
+/*---------------------------------------------*/
+
+/* Glass in white */
+.glass_white {
+  background: rgba(225, 225, 225, 0.16);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Glass in gray */
+.glass_gray {
+  background: rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Glass in dark gray */
+.glass_dark-gray {
+  background: rgba(0, 0, 0, 0.75);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Glass Effect/Regular */
+.glass_regular {
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.25),
+    0px 1px 2px 0px rgba(255, 255, 255, 0.32) inset;
+  backdrop-filter: blur(4px);
+}
+
+/*
+/*---------------------------------------------*/
+/* Background Image                            */
+/*---------------------------------------------*/
+#bg {
+  position: fixed;
+  min-width: 100%;
+  min-height: 100svh;
+  object-fit: cover;
+
+  filter: brightness(40%);
+
+  z-index: -10;
+}
+
+/*
+/*----------------*/
+/* Navigation Bar */
+/*----------------*/
+.nav-bar {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex: 0 1 auto;
+  box-sizing: content-box;
+
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1rem;
+  max-width: 90%;
+  height: 2.5rem;
+
+  border-radius: 999px;
+  border-top: 1px solid var(--glass-edge, rgba(255, 255, 255, 0.24));
+  background: var(--glass-dark-background, rgba(0, 0, 0, 0.1));
+
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+}
+
+.nav-bar button {
+  cursor: pointer;
+}
+
+/* Gap property for flex box is not working for older browser,      */
+/* therefore add margin-left for every button which follows another */
+/* button instead of using gap: 0.5rem;                             */
+.nav-bar > button + button {
+  margin-left: 0.5rem;
+}
+
+/* Call-To-Action Button */
+button.cta {
+  display: flex;
+  width: 10rem;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 1rem;
+  border: 1px solid var(--primary-400, #3dee59);
+  background: rgba(255, 255, 255, 0.32);
+  box-shadow: 0px 0px 10px 0px #42ff20;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  color: var(--color-neutral, #fff);
+
+  /* Shadow/Regular */
+  text-shadow: var(--shadow_regular);
+  font-size: 1rem;
+}
+
+/* Regular Button */
+button.regular {
+  display: flex;
+  width: 2rem;
+  height: 2rem;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.40);
+  border-right: none;
+  border-left: none;
+  border-bottom: rgba(32, 32, 32, 0.16);
+  background: rgba(255, 255, 255, 0.32);
+  box-shadow: 0px 1px 4px 1px rgba(32, 32, 32, 0.32);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  color: var(--color-neutral, #fff);
+
+  /* Shadow/Regular */
+  text-shadow: var(--shadow_regular);
+  font-size: 1rem;
+}
+
+button:disabled {
+  color: var(--color-dim, #999999);
+}

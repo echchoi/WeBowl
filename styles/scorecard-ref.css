@@ -1,0 +1,190 @@
+/*---------------------------------------------*/
+/* Local Variables                             */
+/*---------------------------------------------*/
+:root {
+  --ad-height: 100px;
+}
+
+/*---------------------------------------------*/
+/* Local Styles                                */
+/*---------------------------------------------*/
+/* Regular score */
+.score_200 {
+  font-family: "Mogra", cursive;
+  font-size: 2rem;
+  letter-spacing: 0.125rem;
+  line-height: 1;
+  margin-bottom: 0;
+  text-shadow: var(--shadow_light);
+}
+
+.score_160 {
+  font-family: "Mogra", cursive;
+  font-size: 1.6rem;
+  letter-spacing: 0.125rem;
+  text-shadow: var(--shadow_light);
+}
+
+.label_small {
+  font-size: 1.15rem;
+  text-shadow: var(--shadow_light);
+}
+
+.home {
+  color: var(--color-home);
+}
+
+.away {
+  color: var(--color-away);
+}
+
+.neutral {
+  color: white;
+}
+
+/*---------------------------------------------*/
+/* Start of detail style declaration           */
+/*---------------------------------------------*/
+
+/* Ad Block */
+#ad-block {
+  display: block;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: var(--ad-height);
+  background-color: gray;
+}
+
+/* Glass */
+#glass {
+  display: block;
+  position: fixed;
+  top: var(--ad-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -9;
+}
+
+/* Main Container */
+#main {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr repeat(2, 0.5rem 1fr 1fr);
+  grid-template-rows: 4rem auto;
+
+  place-items: center;
+  max-height: calc(100vh - 100px);
+  max-height: calc(var(--vh, 1vh) * 100 - 100px);
+  margin-top: var(--ad-height);
+  margin-inline: auto;
+  overflow-y: scroll;
+}
+
+/***********************/
+/* Header of scorecard */
+/***********************/
+.header {
+  color: white;
+  font-size: 1.5rem;
+  align-self: start;
+  height: 1.5rem;
+  text-shadow: var(--shadow_light);
+}
+
+.header:nth-child(1) {
+  grid-column: 2 / 3;
+}
+
+.header:nth-child(2) {
+  grid-column: 4 / 6;
+}
+
+.header:nth-child(3) {
+  grid-column: 7 / -1;
+}
+
+/***********/
+/* End Row */
+/***********/
+.end-row {
+  display: grid;
+  grid-column: 1 / -1;
+  width: 98%;
+  height: 2.5rem;
+  grid-template-rows: 2.5rem 12.5rem;
+  grid-template-columns: 1.5rem 1fr repeat(2, 0.5rem 1fr 1fr);
+  cursor: pointer;
+  transition: height 300ms ease-in-out;
+  overflow-y: hidden;
+}
+
+.end-row.expanded {
+  height: 13rem;
+}
+
+/**************/
+/* End Header */
+/**************/
+.end-header {
+  display: grid;
+  width: 100%;
+  grid-column: 1 / -1;
+  grid-template-columns: 1.5rem 1fr repeat(2, 0.5rem 1fr 1fr);
+  justify-content: space-around;
+  align-content: end;
+  place-items: end center;
+  /* margin-top: -1.75rem; */
+}
+
+/* Chevron Sign */
+#chevron {
+  justify-self: end;
+  text-align: end;
+  transition: transform 300ms ease-in-out;
+}
+
+.end-row.expanded #chevron {
+  transform: rotate(180deg);
+}
+
+/***************/
+/* End Details */
+/***************/
+.end-details {
+  display: grid;
+  grid-column: 4 / -1;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-rows: repeat(5, 2rem);
+  width: 100%;
+  height: 10rem;
+  place-items: center;
+  justify-content: space-around;
+}
+
+/* Close Button */
+#close-btn {
+  --btn-size: 2rem;
+  display: flex;
+  width: var(--btn-size, 2rem);
+  height: var(--btn-size, 2rem);
+  border-radius: calc(var(--btn-size) * 0.5);
+  justify-content: center;
+  align-items: center;
+
+  color: white;
+  text-shadow: var(--shadow_light);
+  background: rgba(255, 255, 255, 0.24);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Avoid Landscape Mode */
+/* @media only screen and (orientation: landscape) {
+  body {
+    width: 100vw;
+    transform: rotate(90deg);
+  }
+} */

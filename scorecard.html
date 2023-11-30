@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Score Card</title>
+    <meta name="description" content="" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/scorecard.css" />
+
+    <!-- Font -->
+    <!-- Font Family 'Inter' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Family 'Mogra' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Mogra&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/916ce39bf3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Script -->
+    <script defer src="scripts/scorecard.js"></script>
+    <script defer src="scripts/long-press-event.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <p>HEADER</p>
+      <p id="info"></p>
+    </header>
+
+    <!-- Main Content -->
+    <main id="main">
+      <div id="row-header">
+        <h3 class="header">END</h3>
+        <h3 class="header">HOME</h3>
+        <h3 class="header">AWAY</h3>
+      </div>
+
+      <div id="end-container">
+        <div id="end-rows" data-long-press-delay="1000"></div>
+        <div id="hint">
+          <p>* Long Press to edit score</p>
+        </div>
+      </div>
+
+      <div class="nav-bar">
+        <button id="log-btn" class="regular">Change Log</button>
+        <button
+          id="close-btn"
+          class="fa-solid fa-xmark fa-lg regular"
+          style="color: #ffffff"
+        ></button>
+      </div>
+    </main>
+
+    <footer>FOOTER</footer>
+
+    <!-- Edit Sheet -->
+    <dialog id="edit-sheet" class="glass_white">
+      <section id="before-after">
+        <p id="end-label"></p>
+        <p id="score__before" class="score_300" data-side=""></p>
+        <i id="change-icon" class="fa-solid fa-right-long"></i>
+        <p id="score__after" class="score_300" data-side=""></p>
+      </section>
+      <section id="divider">
+        <hr class="glass_white" />
+      </section>
+      <section id="side-selector" class="regular" data-side="">
+        <button id="home-btn" class="side-btn">Home</button>
+        <button id="tie-btn" class="side-btn">Tie</button>
+        <button id="away-btn" class="side-btn">Away</button>
+      </section>
+      <section id="numpad">
+        <button class="num-btn" data-value="1" disabled>1</button>
+        <button class="num-btn" data-value="2" disabled>2</button>
+        <button class="num-btn" data-value="3" disabled>3</button>
+        <button class="num-btn" data-value="4" disabled>4</button>
+        <button class="num-btn" data-value="5" disabled>5</button>
+        <button class="num-btn" data-value="6" disabled>6</button>
+        <button class="num-btn" data-value="7" disabled>7</button>
+        <button class="num-btn" data-value="8" disabled>8</button>
+        <button class="num-btn" data-value="9" disabled>9</button>
+      </section>
+      <section id="confirm-pad">
+        <button id="edit-cancel" class="regular">Cancel</button>
+        <button id="edit-confirm" class="cta" disabled>Confirm</button>
+      </section>
+    </dialog>
+  </body>
+</html>

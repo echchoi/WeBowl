@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>WeBowl-Score</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/score-input.css" />
+
+    <!-- Font ------------------------------------>
+    <!-- Font Family 'Inter' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Family 'Mogra' -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&family=Mogra&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Font Awesome -->
+    <script
+      src="https://kit.fontawesome.com/916ce39bf3.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- JavaScript Link -->
+    <script defer src="/scripts/score-input.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <p>HEADER</p>
+      <p id="info"></p>
+    </header>
+    <main>
+      <div id="container">
+        <div class="score-wrap">
+          <div class="score_800 home" id="home-score">0</div>
+          <div class="score_800 away" id="away-score">0</div>
+          <div id="score-card-btn__wrap">
+            <div id="score-card-btn__icon">
+              <img
+                src="./resources/images/score-card-icon.png"
+                alt="score card icon"
+              />
+            </div>
+            <div id="score-card-btn__label">
+              <p>Score Card</p>
+            </div>
+          </div>
+          <div id="end__wrap">
+            <span id="end__count">0</span>
+            <span id="end__label">End</span>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>FOOTER</footer>
+  </body>
+
+  <dialog id="score-panel" class="glass_white">
+    <div id="numpad">
+      <button class="num-btn" data-value="1">1</button>
+      <button class="num-btn" data-value="2">2</button>
+      <button class="num-btn" data-value="3">3</button>
+      <button class="num-btn" data-value="4">4</button>
+      <button class="num-btn" data-value="5">5</button>
+      <button class="num-btn" data-value="6">6</button>
+      <button class="num-btn" data-value="7">7</button>
+      <button class="num-btn" data-value="8">8</button>
+      <button class="num-btn" data-value="9">9</button>
+      <button id="tie-btn" data-value="0">TIE</button>
+    </div>
+    <div id="confirm-pad">
+      <button id="cancel-score" class="regular">Cancel</button>
+      <button id="confirm-score" class="cta" disabled>Confirm</button>
+    </div>
+  </dialog>
+
+  <div id="rotate-warning">
+    <div id="warning-content">
+      <p>Please rotate your phone for better experience.</p>
+    </div>
+  </div>
+  
+</html>

@@ -1,0 +1,44 @@
+:root {
+  /* Default Font */
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1rem;
+  background-color: rgb(51, 75, 8);
+}
+
+h1 {
+  padding-bottom: 2rem;
+}
+
+h2 {
+  padding-top: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-style: oblique;
+}
+
+h1 + p,
+h2 + p {
+  padding-top: 1rem;
+}
+
+ul {
+  margin-left: 0;
+  padding-left: 2ch;
+}
+
+a {
+  word-wrap: break-word;
+}

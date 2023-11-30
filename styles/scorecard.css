@@ -1,0 +1,408 @@
+/*******************************************************************/
+/* Local Styles                                                    */
+/*******************************************************************/
+/* Regular score */
+.score_300 {
+  font-family: "Mogra", cursive;
+  font-size: 3rem;
+  letter-spacing: 0.125rem;
+  line-height: 1;
+  margin-bottom: 0;
+  text-shadow: var(--shadow_light);
+}
+
+.score_200 {
+  font-family: "Mogra", cursive;
+  font-size: 2rem;
+  letter-spacing: 0.125rem;
+  line-height: 1;
+  margin-bottom: 0;
+  text-shadow: var(--shadow_light);
+}
+
+.score_160 {
+  font-family: "Mogra", cursive;
+  font-size: 1.6rem;
+  letter-spacing: 0.125rem;
+  text-shadow: var(--shadow_light);
+}
+
+.label_small {
+  font-size: 1.15rem;
+  text-shadow: var(--shadow_light);
+}
+
+.home {
+  color: var(--color-home);
+}
+
+.away {
+  color: var(--color-away);
+}
+
+.neutral {
+  color: var(--color-neutral);
+}
+
+
+/*******************************************************************/
+/* Start of detail style declaration                               */
+/*******************************************************************/
+
+* {
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(0, 44, 12);
+}
+
+/*======================================================*/
+/* Header                                               */
+/*======================================================*/
+header {
+  background-color: blue;
+  color: white;
+
+  height: var(--header-height);
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*======================================================*/
+/* Footer                                               */
+/*======================================================*/
+footer {
+  background-color: red;
+  color: white;
+
+  height: var(--footer-height);
+  flex: 0 0 auto;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+/*======================================================*/
+/* Main Container                                       */
+/*======================================================*/
+#main {
+  outline: 1px solid violet;
+  position: relative;
+
+  height: 100%;
+  flex-flow: 0 1 auto;
+
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+
+  justify-items: center;
+  align-items: start;
+
+  overflow-y: scroll;
+}
+
+/*---------------------------------------------*/
+/* Header of scorecard                         */
+/*---------------------------------------------*/
+#row-header {
+  width: 100%;
+  height: min-content;
+
+  display: grid;
+  grid-template-columns: 0.5rem 1fr repeat(2, 0.5rem 1fr 1fr);
+  grid-template-rows: auto;
+}
+
+.header {
+  color: white;
+  font-size: 1.2rem;
+  align-self: self-end;
+  justify-self: center;
+  text-shadow: var(--shadow_light);
+}
+
+.header:nth-child(1) {
+  grid-column: 2 / 3;
+}
+
+.header:nth-child(2) {
+  grid-column: 4 / 6;
+}
+
+.header:nth-child(3) {
+  grid-column: 7 / -1;
+}
+
+/*---------------------------------------------*/
+/* End Row                                     */
+/*---------------------------------------------*/
+
+#end-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+
+  padding-bottom: 50px;
+}
+
+#end-rows {
+  width: 100%;
+  height: min-content;
+}
+
+.end-row {
+  display: grid;
+  grid-column: 1 / -1;
+  width: 100%;
+  height: 2.5rem;
+  grid-template-columns: 0.5rem 1fr repeat(2, 0.5rem 1fr 1fr);
+  justify-content: space-around;
+  align-content: end;
+  place-items: end center;
+}
+
+#log-btn {
+  width: max-content;
+  font-size: 0.8rem;
+  font-weight: 200;
+  padding-inline: 0.5rem;
+}
+
+::backdrop {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+
+/*======================================================*/
+/* Edit Sheet                                           */
+/*======================================================*/
+#edit-sheet {
+  width: 72%;
+  height: fit-content;
+  margin: auto;
+  border-radius: 1rem;
+}
+
+/*---------------------------------------------*/
+/* Before After elements                       */
+/*---------------------------------------------*/
+#before-after {
+  display: grid;
+  grid-template-columns: 3fr 1fr 3fr;
+  grid-template-rows: 2.5rem 3.5rem;
+}
+
+#end-label {
+  grid-column: 1 / -1;
+  place-self: center;
+
+  color: var(--color-white);
+  font-size: 2rem;
+}
+
+#score__before {  
+  grid-column: 1 / 2;
+  justify-self: end;
+  padding-right: 2rem; 
+  align-self: end;
+}
+
+#change-icon {
+  grid-column: 2 / 3;
+  place-self: center;
+  color: var(--color-white);
+  font-size: 1.5rem;
+}
+
+#score__after{
+  grid-column: 3 / 4;
+  justify-self: start;
+  padding-left: 2rem;
+  align-self: self-end;
+}
+
+.score_300[data-side="home"] {
+  color: var(--color-home);
+}
+
+.score_300[data-side="tie"] {
+  color: var(--color-neutral);
+}
+
+.score_300[data-side="away"] {
+  color: var(--color-away);
+}
+
+/*---------------------------------------------*/
+/* Divider elements                            */
+/*---------------------------------------------*/
+#divider {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+#divider > hr {
+  width: 90%;
+}
+
+/*---------------------------------------------*/
+/* Side Selector elements                      */
+/*---------------------------------------------*/
+#side-selector {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  align-items: center;
+
+  width: 90%;
+  height: calc(1.5rem + 4px);
+  margin-inline: auto;
+  padding-inline: 1px;
+  border-radius: 999px;
+  overflow: clip;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.40);
+  border-right: 1px solid var(--button-normal);
+  border-left: 1px solid var(--button-normal);
+  border-bottom: 1px solid var(--button-normal);
+
+  background-color: var(--button-normal);
+  backdrop-filter: blur(4px);
+}
+
+#side-selector > button {
+  width: 100%;
+  height: 1.5rem;
+  background: var(--button-normal);
+  color: var(--color-white);
+
+  box-sizing: border-box;
+  border: 1px solid var(--shadow_light);
+  box-shadow: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 0.9rem;
+  text-shadow: var(--shadow_light);
+}
+
+#side-selector > button:first-child {
+  border-top-left-radius: 999px;
+  border-bottom-left-radius: 999px;
+}
+
+#side-selector > button:nth-child(2) {
+  border-radius: 0;
+  border-inline: 1px solid rgba(0, 0, 0, 0.32);
+}
+
+#side-selector > button:last-child {
+  border-top-right-radius: 999px;
+  border-bottom-right-radius: 999px;
+}
+
+#side-selector[data-side="home"] > #home-btn {
+  background: var(--color-home);
+}
+
+#side-selector[data-side="tie"] > #tie-btn {
+  background: rgb(192, 0, 192);
+}
+
+#side-selector[data-side="away"] > #away-btn {
+  background: var(--color-away);
+}
+
+
+
+/*---------------------------------------------*/
+/* Number Pad elements                         */
+/*---------------------------------------------*/
+#numpad {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  row-gap: 1rem;
+  column-gap: 0;
+  padding: 1rem;
+  place-items: center;
+}
+
+.num-btn {
+  width: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  
+  color: white;
+  text-shadow: var(--shadow_light);
+  background: var(--button-normal);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#side-selector[data-side="home"] + #numpad .num-btn {
+  outline: 2px solid var(--color-home);
+}
+
+#side-selector[data-side="away"] + #numpad .num-btn {
+  outline: 2px solid var(--color-away);
+}
+
+#side-selector[data-side="home"] + #numpad .num-btn.pressed {
+  background-color: var(--color-home);
+}
+
+#side-selector[data-side="away"] + #numpad .num-btn.pressed {
+  background-color: var(--color-away);
+}
+
+
+/*---------------------------------------------*/
+/* Confirm Pad elements                        */
+/*---------------------------------------------*/
+#confirm-pad {
+  width: 100%;
+  height: 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
+  row-gap: 0;
+  justify-content: space-evenly;
+  place-items: center;
+}
+
+#confirm-pad > button {
+  width: 80%;
+  height: 2rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
